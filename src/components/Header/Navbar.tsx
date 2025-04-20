@@ -4,7 +4,7 @@ import ProductsAndServicesDD from "./ProductsAndServicesDD";
 import SolutionsDD from "./SolutionsDD";
 import SustainabilityDD from "./SustainabilityDD";
 import NewsAndInsightsDD from "./NewsAndInsightsDD";
-import AboutUsDD from "./AboutUsDD";
+// import AboutUsDD from "./AboutUsDD";
 
 const navItems = [
   { label: "Solutions", hasDropdown: true, key: "solutions" },
@@ -15,7 +15,7 @@ const navItems = [
   },
   { label: "Sustainability", hasDropdown: true, key: "sustainability" },
   { label: "News and Insights", hasDropdown: true, key: "newsandinsights" },
-  { label: "About Us", hasDropdown: true, key: "aboutus" },
+  // { label: "About Us", hasDropdown: true, key: "aboutus" },
 ];
 
 const Navbar: React.FC = () => {
@@ -104,7 +104,7 @@ const Navbar: React.FC = () => {
               </div>
             )}
 
-            {item.key === "aboutus" && (
+            {/* {item.key === "aboutus" && (
               <div
                 className={`absolute top-full left-[-30rem] z-50 transition-all duration-300 ${
                   activeDropdown === "aboutus"
@@ -114,7 +114,7 @@ const Navbar: React.FC = () => {
               >
                 <AboutUsDD />
               </div>
-            )}
+            )} */}
           </li>
         ))}
       </ul>

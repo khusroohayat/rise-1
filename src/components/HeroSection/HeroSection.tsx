@@ -1,13 +1,13 @@
 import React from "react";
-import GlobeComponent from "./GlobeComponent";
 import CtaButton from "../ui/CtaButton";
+import { GlobeDemo } from "./GlobeDemo";
 
 const HeroSection: React.FC = () => {
   return (
     <section className="relative bg-white px-[2rem] pb-[4rem] sm:px-[4rem]">
       <div
         style={{ height: "calc(100vh - 115px)" }}
-        className="ppx relative overflow-hidden rounded-[1.5rem] bg-[#3A53A1]"
+        className="relative overflow-hidden rounded-[1.5rem] bg-[#3A53A1]"
       >
         <div className="absolute z-[10] flex size-full flex-col items-center justify-center px-[2rem] text-center md:items-start md:pl-[4rem] md:text-left">
           <h1 className="max-w-[70rem] text-[2.2rem] leading-[3rem] font-medium text-white uppercase sm:text-[4rem] sm:leading-[5rem]">
@@ -21,7 +21,7 @@ const HeroSection: React.FC = () => {
             When performance matters most, count on us.
           </p>
 
-          <div className="flex items-center gap-[1rem]">
+          <div className="relative z-[11] flex items-center gap-[1rem]">
             <CtaButton
               text="Explore"
               bgColor="bg-[var(--primary-color)]"
@@ -38,8 +38,8 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
 
-        <div className="absolute top-0 z-[9] hidden md:right-[-40%] md:block lg:right-[-35%]">
-          <GlobeComponent />
+        <div className="relative top-[50%] z-[9] flex size-full items-center sm:top-0 sm:left-[40%] sm:justify-end lg:left-[20%]">
+          <GlobeDemo />
         </div>
       </div>
     </section>
