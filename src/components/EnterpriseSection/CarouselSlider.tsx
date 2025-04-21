@@ -10,6 +10,7 @@ import partsEquipment from "../../assets/images/parts-equipment.jpg";
 import sliderIcon1 from "../../assets/images/slider-icon-1.png";
 import sliderIcon2 from "../../assets/images/slider-icon-2.png";
 import sliderIcon3 from "../../assets/images/slider-icon-3.png";
+import whiteLogo from "../../assets/images/white-logo-rise.png";
 
 // import required modules
 import { Autoplay } from "swiper/modules";
@@ -113,6 +114,12 @@ const CarouselSlider = () => {
           <SwiperSlide className="group relative overflow-hidden rounded-[1rem]">
             <div className="h-[45rem] w-full">
               <img
+                src={whiteLogo}
+                alt="Image"
+                className="absolute top-[2rem] right-[2rem] max-w-[25rem]"
+              />
+
+              <img
                 src={services}
                 alt="Image"
                 className="size-full object-cover"
@@ -141,6 +148,12 @@ const CarouselSlider = () => {
           <SwiperSlide className="group relative overflow-hidden rounded-[1rem]">
             <div className="h-[45rem] w-full">
               <img
+                src={whiteLogo}
+                alt="Image"
+                className="absolute top-[2rem] right-[2rem] max-w-[25rem]"
+              />
+
+              <img
                 src={partsEquipment}
                 alt="Image"
                 className="size-full object-cover"
@@ -168,6 +181,12 @@ const CarouselSlider = () => {
 
           <SwiperSlide className="group relative overflow-hidden rounded-[1rem]">
             <div className="h-[45rem] w-full">
+              <img
+                src={whiteLogo}
+                alt="Image"
+                className="absolute top-[2rem] right-[2rem] max-w-[25rem]"
+              />
+
               <img
                 src={upgrades}
                 alt="Image"
