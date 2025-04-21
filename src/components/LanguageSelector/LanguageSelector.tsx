@@ -14,6 +14,12 @@ const countries: Country[] = [
   { name: "United Kingdom", code: "GB", languages: ["English"] },
   { name: "Bahrain", code: "BH", languages: ["العربية", "English"] },
   { name: "Qatar", code: "QA", languages: ["العربية", "English"] },
+  { name: "Saudi Arabia", code: "SA", languages: ["العربية", "English"] },
+  {
+    name: "United Arab Emirates",
+    code: "AE",
+    languages: ["العربية", "English"],
+  },
 ];
 
 const LanguageSelector: React.FC = () => {

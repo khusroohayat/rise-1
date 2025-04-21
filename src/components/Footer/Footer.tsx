@@ -2,6 +2,7 @@ import Logo from "../../assets/images/logo.png";
 import facebook from "../../assets/images/facebook.svg";
 import instagram from "../../assets/images/instagram.svg";
 import twitter from "../../assets/images/twitter.svg";
+import linkedin from "../../assets/images/linkedin.svg";
 import BackToTopButton from "../ui/BackToTopButton";
 
 const productsItem = [
@@ -108,14 +109,21 @@ const Footer = () => {
                   <img src={twitter} alt="icon" />
                 </a>
               </li>
+
+              <li className="cursor-pointer">
+                <a
+                  href="https://www.linkedin.com/company/reliable-industrail-solutions-engineering/"
+                  className="inline-flex size-[3rem] items-center justify-center"
+                >
+                  <img src={linkedin} alt="icon" />
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="flex items-center justify-between">
-          <p className="mt-[4rem] text-[1.4rem] font-light">
-            © 2025 RISE, Eng.
-          </p>
+        <div className="mt-[4rem] flex items-center justify-between">
+          <p className="text-[1.4rem] font-light">© 2025 RISE, Eng.</p>
 
           <BackToTopButton />
         </div>
