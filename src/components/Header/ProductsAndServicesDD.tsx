@@ -1,5 +1,5 @@
 import { MoveRight } from "lucide-react";
-import dropdownImg3 from "../../assets/images/dropdown-img-3.gif";
+import dropdownImg3 from "../../assets/images/dropdown-img-3.webm";
 
 const solutionsDropdownData = [
   {
@@ -85,7 +85,13 @@ const ProductsAndServicesDD = () => {
           </h4>
 
           <div className="w-full">
-            <img src={dropdownImg3} alt="Image" className="w-full" />
+            <video
+              autoPlay
+              loop
+              muted
+              src={dropdownImg3}
+              className="w-full"
+            ></video>
           </div>
 
           <p className="text-[1.5rem] font-light">

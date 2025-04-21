@@ -1,4 +1,4 @@
-import { Navigation } from "lucide-react";
+import { Languages } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import Flag from "react-world-flags";
 
@@ -10,67 +10,10 @@ interface Country {
 }
 
 const countries: Country[] = [
-  { name: "Australia", code: "AU", languages: ["English"] },
-  { name: "Austria", code: "AT", languages: ["Deutsch", "English"] },
-  {
-    name: "Belgium",
-    code: "BE",
-    languages: ["Nederlands", "Français", "Deutsch", "English"],
-  },
-  { name: "Brazil", code: "BR", languages: ["Português", "English"] },
-  { name: "Bulgaria", code: "BG", languages: ["English"] },
-  { name: "Canada", code: "CA", languages: ["English", "Français"] },
-  { name: "Croatia", code: "HR", languages: ["English", "Italiano"] },
-  { name: "Cyprus", code: "CY", languages: ["English"] },
-  { name: "Czech Republic", code: "CZ", languages: ["English"] },
-  { name: "Denmark", code: "DK", languages: ["English"] },
-  { name: "Estonia", code: "EE", languages: ["English"] },
-  { name: "Finland", code: "FI", languages: ["English", "Svenska"] },
-  { name: "France", code: "FR", languages: ["Français", "English"] },
-  { name: "Germany", code: "DE", languages: ["Deutsch", "English"] },
-  { name: "Gibraltar", code: "GI", languages: ["English"] },
-  { name: "Greece", code: "GR", languages: ["English"] },
-  { name: "Hong Kong", code: "HK", languages: ["English", "简体中文"] },
-  { name: "Hungary", code: "HU", languages: ["English"] },
-  { name: "India", code: "IN", languages: ["English"] },
-  { name: "Ireland", code: "IE", languages: ["English"] },
-  { name: "Italy", code: "IT", languages: ["Italiano", "English"] },
-  { name: "Japan", code: "JP", languages: ["日本語", "English"] },
-  { name: "Latvia", code: "LV", languages: ["English"] },
-  { name: "Liechtenstein", code: "LI", languages: ["Deutsch", "English"] },
-  { name: "Lithuania", code: "LT", languages: ["English"] },
-  {
-    name: "Luxembourg",
-    code: "LU",
-    languages: ["Français", "Deutsch", "English"],
-  },
-  { name: "Malaysia", code: "MY", languages: ["English", "简体中文"] },
-  { name: "Malta", code: "MT", languages: ["English"] },
-  { name: "Mexico", code: "MX", languages: ["Español", "English"] },
-  { name: "Netherlands", code: "NL", languages: ["Nederlands", "English"] },
-  { name: "New Zealand", code: "NZ", languages: ["English"] },
-  { name: "Norway", code: "NO", languages: ["English"] },
-  { name: "Poland", code: "PL", languages: ["English"] },
-  { name: "Portugal", code: "PT", languages: ["Português", "English"] },
-  { name: "Romania", code: "RO", languages: ["English"] },
-  { name: "Singapore", code: "SG", languages: ["English", "简体中文"] },
-  { name: "Slovakia", code: "SK", languages: ["English"] },
-  { name: "Slovenia", code: "SI", languages: ["English", "Italiano"] },
-  { name: "Spain", code: "ES", languages: ["Español", "English"] },
-  { name: "Sweden", code: "SE", languages: ["Svenska", "English"] },
-  {
-    name: "Switzerland",
-    code: "CH",
-    languages: ["Deutsch", "Français", "Italiano", "English"],
-  },
-  { name: "Thailand", code: "TH", languages: ["ไทย", "English"] },
-  { name: "United Arab Emirates", code: "AE", languages: ["English"] },
+  { name: "United States of America", code: "US", languages: ["English"] },
   { name: "United Kingdom", code: "GB", languages: ["English"] },
-  {
-    name: "United States",
-    code: "US",
-    languages: ["English", "Español", "简体中文"],
-  },
+  { name: "Bahrain", code: "BH", languages: ["العربية", "English"] },
+  { name: "Qatar", code: "QA", languages: ["العربية", "English"] },
 ];
 
 const LanguageSelector: React.FC = () => {
@@ -113,20 +56,21 @@ const LanguageSelector: React.FC = () => {
         onClick={toggleCountryList}
         className="inline-flex w-max cursor-pointer justify-center rounded-[1.65rem] text-[1.5rem] font-light transition-all duration-200 hover:opacity-90"
       >
-        <Navigation className="relative top-[6px] right-[.6rem] size-[1.5rem] fill-black transition-all duration-200" />
+        <Languages className="relative top-[6px] right-[.6rem] size-[1.5rem] transition-all duration-200" />
+
         <span>
           {selectedCountry?.name} ({selectedLanguage})
         </span>
       </button>
 
       <div
-        className={`shadow-01 absolute top-[100%] left-0 z-[100] w-full rounded-[8px] bg-[#F6F9FC] py-[1.6rem] transition-all duration-300 ${
+        className={`shadow-01 absolute top-[100%] z-[100] rounded-[8px] bg-[#F6F9FC] py-[1.6rem] transition-all duration-300 ${
           open
             ? "pointer-events-auto visible opacity-100"
             : "pointer-events-none invisible opacity-0"
         }`}
       >
-        <div className="grid grid-cols-4 gap-y-[.8rem]">
+        <div className="grid grid-cols-1 gap-y-[.8rem]">
           {countries.map((country, index) => (
             <div
               key={index}

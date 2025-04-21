@@ -9,6 +9,7 @@ export function GlobeDemo() {
   const globeConfig = {
     pointSize: 4,
     globeColor: "#3A53A1",
+    globeOpacity: 0.2, // 👈 new line here
     showAtmosphere: true,
     atmosphereColor: "#000000",
     atmosphereAltitude: 0.08,
@@ -28,7 +29,7 @@ export function GlobeDemo() {
     autoRotate: true,
     autoRotateSpeed: 0.5,
   };
-  const colors = ["#06b6d4", "#3b82f6", "#6366f1"];
+  const colors = ["#1b7ccc", "#3b82f6", "#6366f1"];
   const sampleArcs = [
     {
       order: 1,

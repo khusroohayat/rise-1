@@ -2,6 +2,7 @@ import Logo from "../../assets/images/logo.png";
 import facebook from "../../assets/images/facebook.svg";
 import instagram from "../../assets/images/instagram.svg";
 import twitter from "../../assets/images/twitter.svg";
+import BackToTopButton from "../ui/BackToTopButton";
 
 const productsItem = [
   "Contact",
@@ -111,7 +112,13 @@ const Footer = () => {
           </div>
         </div>
 
-        <p className="mt-[4rem] text-[1.4rem] font-light">© 2025 RISE, Eng.</p>
+        <div className="flex items-center justify-between">
+          <p className="mt-[4rem] text-[1.4rem] font-light">
+            © 2025 RISE, Eng.
+          </p>
+
+          <BackToTopButton />
+        </div>
       </div>
     </footer>
   );

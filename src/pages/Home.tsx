@@ -1,32 +1,75 @@
-import BuiltSection from "@/components/BuiltSection/BuiltSection";
-import AboutSection from "@/components/AboutSection/AboutSection";
-import BlogSection from "@/components/BlogSection/BlogSection";
-import ContactSection from "@/components/ContactSection/ContactSection";
-import EnterpriseSection from "@/components/EnterpriseSection/EnterpriseSection";
-// import ModularSection from "@/components/ModularSection/ModularSection";
-import SolutionSection from "@/components/SolutionSection/SolutionSection";
-import TrustedSection from "@/components/TrustedSection/TrustedSection";
-import WhySection from "@/components/WhySection/WhySection";
-import LaunchSection from "@/components/LaunchSection/LaunchSection";
-import ReadySection from "@/components/ReadySection/ReadySection";
+import { Suspense, lazy } from "react";
+
+// Above-the-fold components – load immediately
 import HeroSection from "@/components/HeroSection/HeroSection";
+import TrustedSection from "@/components/TrustedSection/TrustedSection";
+
+// Lazy-loaded components
+const EnterpriseSection = lazy(
+  () => import("@/components/EnterpriseSection/EnterpriseSection"),
+);
+const LaunchSection = lazy(
+  () => import("@/components/LaunchSection/LaunchSection"),
+);
+const SolutionSection = lazy(
+  () => import("@/components/SolutionSection/SolutionSection"),
+);
+const WhySection = lazy(() => import("@/components/WhySection/WhySection"));
+const BuiltSection = lazy(
+  () => import("@/components/BuiltSection/BuiltSection"),
+);
+const AboutSection = lazy(
+  () => import("@/components/AboutSection/AboutSection"),
+);
+const BlogSection = lazy(() => import("@/components/BlogSection/BlogSection"));
+const ContactSection = lazy(
+  () => import("@/components/ContactSection/ContactSection"),
+);
+const ReadySection = lazy(
+  () => import("@/components/ReadySection/ReadySection"),
+);
 
 const Home = () => {
   return (
     <main className="overflow-hidden">
       <HeroSection />
       <TrustedSection />
-      <EnterpriseSection />
-      <LaunchSection />
-      <SolutionSection />
-      <WhySection />
-      <BuiltSection />
-      {/* <ModularSection /> */}
-      <AboutSection />
-      <BlogSection />
-      {/* <GlobalSection /> */}
-      <ContactSection />
-      <ReadySection />
+
+      <Suspense fallback={<div>Loading Enterprise Section...</div>}>
+        <EnterpriseSection />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading Launch Section...</div>}>
+        <LaunchSection />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading Solution Section...</div>}>
+        <SolutionSection />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading Why Section...</div>}>
+        <WhySection />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading Built Section...</div>}>
+        <BuiltSection />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading About Section...</div>}>
+        <AboutSection />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading Blog Section...</div>}>
+        <BlogSection />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading Contact Section...</div>}>
+        <ContactSection />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading Ready Section...</div>}>
+        <ReadySection />
+      </Suspense>
     </main>
   );
 };
