@@ -18,7 +18,7 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section className="bg-[#F7F7F7] px-[2rem] lg:px-[0rem]">
+    <section className="bg-[#ffffff] px-[2rem] lg:px-[0rem]">
       <div className="container grid grid-cols-1 items-center gap-[4rem] py-[6rem] lg:grid-cols-2 lg:items-start">
         <div className="flex flex-col items-center gap-[4rem] text-center lg:items-start lg:text-left">
           <div>

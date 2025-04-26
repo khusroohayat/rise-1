@@ -3,6 +3,7 @@ import { Suspense, lazy } from "react";
 // Above-the-fold components – load immediately
 import HeroSection from "@/components/HeroSection/HeroSection";
 import TrustedSection from "@/components/TrustedSection/TrustedSection";
+import TeamSection from "@/components/TeamSection/TeamSection";
 
 // Lazy-loaded components
 const EnterpriseSection = lazy(
@@ -57,6 +58,10 @@ const Home = () => {
 
       <Suspense fallback={<div>Loading About Section...</div>}>
         <AboutSection />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading Blog Section...</div>}>
+        <TeamSection />
       </Suspense>
 
       <Suspense fallback={<div>Loading Blog Section...</div>}>
