@@ -1,10 +1,12 @@
 import { Building, ChevronRight } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 type HamburgerNavbarProps = {
   activePopup: "solutions" | "productsandservices" | null;
   setActivePopup: React.Dispatch<
     React.SetStateAction<"solutions" | "productsandservices" | null>
   >;
+  setActiveHamburger: React.Dispatch<React.SetStateAction<boolean>>; // ← Add this line
 };
 
 const solutionsPopupData = [
@@ -53,6 +55,7 @@ const solutionsPopupData = [
 const HamburgerNavbar: React.FC<HamburgerNavbarProps> = ({
   activePopup,
   setActivePopup,
+  setActiveHamburger,
 }) => {
   return (
     <ul className="mx-[1.6rem] my-[2rem]">
@@ -126,14 +129,15 @@ const HamburgerNavbar: React.FC<HamburgerNavbarProps> = ({
         </div>
       </li>
 
-      {/* <li className="border-b-[2px] border-dashed border-[#e4e4e4]">
-        <a
-          href=""
+      <li className="border-b-[2px] border-dashed border-[#e4e4e4]">
+        <NavLink
+          onClick={() => setActiveHamburger(false)}
+          to="/blog"
           className="flex w-full items-center justify-between py-[2rem] text-[1.8rem] font-medium tracking-[0.2px] text-[var(--secondary-color)] transition-all duration-200 hover:opacity-50"
         >
-          Pricing
-        </a>
-      </li> */}
+          Blogs
+        </NavLink>
+      </li>
     </ul>
   );
 };

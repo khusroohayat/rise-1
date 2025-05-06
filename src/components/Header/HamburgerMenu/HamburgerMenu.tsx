@@ -51,6 +51,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
         <HamburgerNavbar
           activePopup={activePopup}
           setActivePopup={setActivePopup}
+          setActiveHamburger={setActiveHamburger}
         />
       </div>
 

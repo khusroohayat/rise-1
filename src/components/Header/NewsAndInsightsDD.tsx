@@ -1,11 +1,12 @@
 import { MoveRight } from "lucide-react";
 import dropdownImg2 from "../../assets/images/dropdown-img-2.webm";
+import { NavLink } from "react-router-dom";
 
 const solutionsDropdownData = [
   {
     id: 0,
-    link: "",
-    text: "Product Optimization",
+    link: "/blog",
+    text: "Blogs",
     desc: "Unlock the full production potential of your asset, across the entire lifecycle.",
   },
   {
@@ -62,12 +63,12 @@ const NewsAndInsightsDD = () => {
               key={item.id}
               className="mt-[1rem] mb-[3rem] flex flex-col gap-[.8rem]"
             >
-              <a
-                href={item.link}
+              <NavLink
+                to={item.link}
                 className="text-[1.5rem] font-normal hover:text-[var(--primary-color)] hover:underline"
               >
                 {item.text}
-              </a>
+              </NavLink>
 
               <p className="text-[1.4rem] leading-[2.2rem] font-thin">
                 {item.desc}

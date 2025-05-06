@@ -4,6 +4,7 @@ import { Suspense, lazy } from "react";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import TrustedSection from "@/components/TrustedSection/TrustedSection";
 import TeamSection from "@/components/TeamSection/TeamSection";
+import { Helmet } from "react-helmet-async";
 
 // Lazy-loaded components
 const EnterpriseSection = lazy(
@@ -33,6 +34,14 @@ const ReadySection = lazy(
 const Home = () => {
   return (
     <main className="overflow-hidden">
+      <Helmet>
+        <title>RISE Engineering</title>
+        <meta
+          name="description"
+          content="RadixTech's MEAL System simplifies monitoring and evaluation, delivering real-time insights to empower humanitarian aid organizations."
+        />
+      </Helmet>
+
       <HeroSection />
       <TrustedSection />
 

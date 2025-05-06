@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
 import { useEffect, useState } from "react";
 import LanguageSelector from "../LanguageSelector/LanguageSelector";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const [activeHamburger, setActiveHamburger] = useState<boolean>(false);
@@ -49,13 +50,13 @@ const Header = () => {
       <div className="relative flex h-[8rem] items-center justify-between">
         <div className="flex items-center gap-[3rem]">
           <div>
-            <a href="" className="inline-flex max-w-[18rem]">
+            <NavLink to="/" className="inline-flex max-w-[18rem]">
               <img
                 src={Logo}
                 alt="Brand Logo"
                 className="size-full object-cover"
               />
-            </a>
+            </NavLink>
           </div>
 
           <div className="hidden lg:block">

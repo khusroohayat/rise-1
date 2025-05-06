@@ -3,49 +3,40 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // ✅ Add this
 import FlipCard from "../ui/FlipCard";
-import member1A from "../../assets/images/1A.png";
-import member1B from "../../assets/images/1B.png";
 import member2A from "../../assets/images/2A.png";
-import member2B from "../../assets/images/2B.png";
 import member3A from "../../assets/images/3A.png";
-import member3B from "../../assets/images/3B.png";
 import member4A from "../../assets/images/4A.png";
-import member4B from "../../assets/images/4B.png";
 import member5A from "../../assets/images/5A.png";
-import member5B from "../../assets/images/5B.png";
-import member6A from "../../assets/images/6A.png";
-import member6B from "../../assets/images/6B.png";
+// import member6A from "../../assets/images/6A.png";
+import member7A from "../../assets/images/7A.png";
+import member8A from "../../assets/images/8A.jpg";
+import twitter from "../../assets/images/twitter.svg";
+import linkedin from "../../assets/images/linkedin.svg";
 
 const teamMembers = [
   {
-    id: 0,
-    frontImage: member1A,
-    backImage: member1B,
-  },
-  {
     id: 1,
     frontImage: member2A,
-    backImage: member2B,
   },
   {
     id: 2,
     frontImage: member3A,
-    backImage: member3B,
   },
   {
     id: 3,
     frontImage: member4A,
-    backImage: member4B,
   },
   {
     id: 4,
     frontImage: member5A,
-    backImage: member5B,
   },
   {
     id: 5,
-    frontImage: member6A,
-    backImage: member6B,
+    frontImage: member7A,
+  },
+  {
+    id: 6,
+    frontImage: member8A,
   },
 ];
 
@@ -81,11 +72,25 @@ const TeamSection = () => {
                 }
                 back={
                   <div className="flex h-full w-full flex-col items-center justify-center rounded-[2rem] shadow-lg">
-                    <img
-                      src={item.backImage}
-                      alt="Image"
-                      className="size-full"
-                    />
+                    <ul className="grid w-full gap-[2rem]">
+                      <li className="cursor-pointer">
+                        <a
+                          href="https://twitter.com/RiseEngServices"
+                          className="flex h-[4rem] w-full items-center justify-center bg-white shadow-2xs"
+                        >
+                          <img src={twitter} alt="icon" />
+                        </a>
+                      </li>
+
+                      <li className="cursor-pointer">
+                        <a
+                          href="https://www.linkedin.com/company/reliable-industrail-solutions-engineering/"
+                          className="flex h-[4rem] w-full items-center justify-center bg-white shadow-2xs"
+                        >
+                          <img src={linkedin} alt="icon" />
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 }
               />
