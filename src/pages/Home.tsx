@@ -1,35 +1,13 @@
-import { Suspense, lazy } from "react";
-
-// Above-the-fold components – load immediately
-import HeroSection from "@/components/HeroSection/HeroSection";
-import TrustedSection from "@/components/TrustedSection/TrustedSection";
-import TeamSection from "@/components/TeamSection/TeamSection";
+import AboutSection from "@/components/sections/AboutSection";
+import BlogSection from "@/components/sections/BlogSection";
+import ContactSection from "@/components/sections/ContactSection";
+import ExperienceSection from "@/components/sections/ExperienceSection";
+import HeroSection from "@/components/sections/HeroSection";
+import ServiceSection from "@/components/sections/ServiceSection";
+import TeamSection from "@/components/sections/TeamSection";
+import TrustedSection from "@/components/sections/TrustedSection";
+import WhyChooseSection from "@/components/sections/WhyChooseSection";
 import { Helmet } from "react-helmet-async";
-
-// Lazy-loaded components
-const EnterpriseSection = lazy(
-  () => import("@/components/EnterpriseSection/EnterpriseSection"),
-);
-const LaunchSection = lazy(
-  () => import("@/components/LaunchSection/LaunchSection"),
-);
-const SolutionSection = lazy(
-  () => import("@/components/SolutionSection/SolutionSection"),
-);
-const WhySection = lazy(() => import("@/components/WhySection/WhySection"));
-const BuiltSection = lazy(
-  () => import("@/components/BuiltSection/BuiltSection"),
-);
-const AboutSection = lazy(
-  () => import("@/components/AboutSection/AboutSection"),
-);
-const BlogSection = lazy(() => import("@/components/BlogSection/BlogSection"));
-const ContactSection = lazy(
-  () => import("@/components/ContactSection/ContactSection"),
-);
-const ReadySection = lazy(
-  () => import("@/components/ReadySection/ReadySection"),
-);
 
 const Home = () => {
   return (
@@ -44,46 +22,13 @@ const Home = () => {
 
       <HeroSection />
       <TrustedSection />
-
-      <Suspense fallback={<div>Loading Enterprise Section...</div>}>
-        <EnterpriseSection />
-      </Suspense>
-
-      <Suspense fallback={<div>Loading Launch Section...</div>}>
-        <LaunchSection />
-      </Suspense>
-
-      <Suspense fallback={<div>Loading Solution Section...</div>}>
-        <SolutionSection />
-      </Suspense>
-
-      <Suspense fallback={<div>Loading Why Section...</div>}>
-        <WhySection />
-      </Suspense>
-
-      <Suspense fallback={<div>Loading Built Section...</div>}>
-        <BuiltSection />
-      </Suspense>
-
-      <Suspense fallback={<div>Loading About Section...</div>}>
-        <AboutSection />
-      </Suspense>
-
-      <Suspense fallback={<div>Loading Blog Section...</div>}>
-        <TeamSection />
-      </Suspense>
-
-      <Suspense fallback={<div>Loading Blog Section...</div>}>
-        <BlogSection />
-      </Suspense>
-
-      <Suspense fallback={<div>Loading Contact Section...</div>}>
-        <ContactSection />
-      </Suspense>
-
-      <Suspense fallback={<div>Loading Ready Section...</div>}>
-        <ReadySection />
-      </Suspense>
+      <AboutSection />
+      <ExperienceSection />
+      <ServiceSection />
+      <WhyChooseSection />
+      <TeamSection />
+      <BlogSection />
+      <ContactSection />
     </main>
   );
 };
