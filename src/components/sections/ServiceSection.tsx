@@ -52,7 +52,7 @@ const ServiceSection = () => {
           <div data-aos="fade-up" data-aos-delay="200">
             <Button variant="dark">
               <span>Explore All Services</span>
-              <div className="relative inline-flex size-[3.3rem] items-center justify-center rounded-full bg-white">
+              <div className="relative inline-flex size-[3.3rem] items-center justify-center rounded-[.8rem] bg-white">
                 <div className="size-[1.7rem] overflow-hidden">
                   <div className="flex -translate-x-full transform transition-transform duration-300 group-hover:translate-x-0">
                     <div className="flex size-full items-center justify-center">
@@ -83,7 +83,7 @@ const ServiceSection = () => {
               el: ".custom-pagination",
               clickable: true,
               renderBullet: (index, className) => {
-                return `<span class="${className} cursor-pointer !mx-0">${index + 1}</span>`;
+                return `<span class="${className} cursor-pointer  !mx-0">${index + 1}</span>`;
               },
             }}
             navigation={false}
@@ -145,7 +145,7 @@ const ServiceSection = () => {
               <button
                 ref={prevRef}
                 disabled={!swiperInstance}
-                className="inline-flex size-[3.5rem] cursor-pointer items-center justify-center rounded-[.8rem] bg-[#0B3558] text-white transition-all duration-[0.3s] disabled:cursor-not-allowed disabled:opacity-30 md:size-[4.5rem]"
+                className="inline-flex size-[3.5rem] cursor-pointer items-center justify-center rounded-[1.2rem] bg-[#0B3558] text-white transition-all duration-[0.3s] disabled:cursor-not-allowed disabled:opacity-30 md:size-[4.5rem]"
                 aria-label="Previous slide"
               >
                 <ArrowLeft className="size-[1.6rem] md:size-[2rem]" />
@@ -154,7 +154,7 @@ const ServiceSection = () => {
               <button
                 ref={nextRef}
                 disabled={!swiperInstance}
-                className="inline-flex size-[3.5rem] cursor-pointer items-center justify-center rounded-[.8rem] bg-[#0B3558] text-white transition-all duration-[0.3s] disabled:cursor-not-allowed disabled:opacity-30 md:size-[4.5rem]"
+                className="inline-flex size-[3.5rem] cursor-pointer items-center justify-center rounded-[1.2rem] bg-[#0B3558] text-white transition-all duration-[0.3s] disabled:cursor-not-allowed disabled:opacity-30 md:size-[4.5rem]"
                 aria-label="Next slide"
               >
                 <ArrowRight className="size-[1.6rem] md:size-[2rem]" />

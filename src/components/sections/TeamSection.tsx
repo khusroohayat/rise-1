@@ -86,12 +86,16 @@ const TeamSection = () => {
             {teamMembers.map((item, idx) => (
               <SwiperSlide key={idx}>
                 <>
-                  <div className="h-auto w-full overflow-hidden rounded-[8px]">
-                    <img
-                      src={item.image}
-                      alt="Team Image"
-                      className="size-full object-contain object-center"
-                    />
+                  <div className="h-auto w-full overflow-hidden rounded-[.8rem]">
+                    <picture>
+                      <source srcSet={item.webp} type="image/webp" />
+                      <img
+                        src={item.png}
+                        alt="Team Image"
+                        loading="lazy"
+                        className="size-full object-contain object-center"
+                      />
+                    </picture>
                   </div>
 
                   <ul className="mt-[.6rem] flex flex-wrap items-center gap-x-[.5rem] text-[1.4rem] leading-[2rem]">
@@ -112,7 +116,7 @@ const TeamSection = () => {
           <div className="relative mt-[4rem] flex w-full items-center justify-end gap-[1rem]">
             <button
               ref={prevRef}
-              className="inline-flex size-[3.5rem] cursor-pointer items-center justify-center rounded-[.8rem] bg-[#0B3558] text-white transition-all duration-[0.3s] disabled:cursor-not-allowed disabled:opacity-30 md:size-[4.5rem]"
+              className="inline-flex size-[3.5rem] cursor-pointer items-center justify-center rounded-[1.2rem] bg-[#0B3558] text-white transition-all duration-[0.3s] disabled:cursor-not-allowed disabled:opacity-30 md:size-[4.5rem]"
               aria-label="Previous slide"
             >
               <ArrowLeft className="size-[1.6rem] md:size-[2rem]" />
@@ -120,7 +124,7 @@ const TeamSection = () => {
 
             <button
               ref={nextRef}
-              className="field-next inline-flex size-[3.5rem] cursor-pointer items-center justify-center rounded-[.8rem] bg-[#0B3558] text-white transition-all duration-[0.3s] disabled:cursor-not-allowed disabled:opacity-30 md:size-[4.5rem]"
+              className="field-next inline-flex size-[3.5rem] cursor-pointer items-center justify-center rounded-[1.2rem] bg-[#0B3558] text-white transition-all duration-[0.3s] disabled:cursor-not-allowed disabled:opacity-30 md:size-[4.5rem]"
               aria-label="Next slide"
             >
               <ArrowRight className="size-[1.6rem] md:size-[2rem]" />

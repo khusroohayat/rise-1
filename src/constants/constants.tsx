@@ -12,20 +12,30 @@ import alHajLogo from "../assets/images/al-haj.png";
 import dewanPetroleumLogo from "../assets/images/dewan-petroleum.png";
 import mariEnergiesLogo from "../assets/images/mari-energies.png";
 import cooperServicesLogo from "../assets/images/cooper-services.png";
-import constructionImg from "../assets/images/construction-img.jpg";
-import engineeringImg from "../assets/images/engineering-img.jpg";
-import consultancyImg from "../assets/images/consultancy-img.jpg";
-import fieldImg from "../assets/images/field-img.jpg";
-import teamImg01 from "../assets/images/team-img-01.avif";
-import teamImg02 from "../assets/images/team-img-02.avif";
-import teamImg03 from "../assets/images/team-img-03.avif";
-import teamImg04 from "../assets/images/team-img-04.avif";
-import teamImg05 from "../assets/images/team-img-05.avif";
-import teamImg06 from "../assets/images/team-img-06.avif";
+import teamImg01 from "../assets/images/team-img-01.png";
+import teamImg02 from "../assets/images/team-img-02.png";
+import teamImg03 from "../assets/images/team-img-03.png";
+import teamImg04 from "../assets/images/team-img-04.png";
+import teamImg05 from "../assets/images/team-img-05.png";
+import teamImg06 from "../assets/images/team-img-06.png";
+import teamImg01Webp from "../assets/images/team-img-01.webp";
+import teamImg02Webp from "../assets/images/team-img-02.webp";
+import teamImg03Webp from "../assets/images/team-img-03.webp";
+import teamImg04Webp from "../assets/images/team-img-04.webp";
+import teamImg05Webp from "../assets/images/team-img-05.webp";
+import teamImg06Webp from "../assets/images/team-img-06.webp";
 import facebookIcon from "../assets/images/facebook-icon.svg";
 import instagramIcon from "../assets/images/instagram-icon.svg";
 import twitterIcon from "../assets/images/twitter-icon.svg";
 import linkedinIcon from "../assets/images/linkedin-icon.svg";
+import certification01 from "../assets/images/certification-01.svg";
+import certification02 from "../assets/images/certification-02.svg";
+import certification03 from "../assets/images/certification-03.svg";
+import certification04 from "../assets/images/certification-04.svg";
+import serviceImg01 from "../assets/images/service-img-01.png";
+import serviceImg02 from "../assets/images/service-img-02.png";
+import serviceImg03 from "../assets/images/service-img-03.jpg";
+import serviceImg04 from "../assets/images/service-img-04.png";
 
 // Mobile Navigation Data
 
@@ -94,25 +104,25 @@ export const pageRoutes = [
 
 export const servicesData = [
   {
-    image: fieldImg,
+    image: serviceImg01,
     title: "Field Services",
     description:
       "On-site maintenance, troubleshooting, and commissioning support to keep your equipment running reliably and efficiently under real-world conditions.",
   },
   {
-    image: consultancyImg,
+    image: serviceImg02,
     title: "Consultancy",
     description:
       "Expert guidance on operations, equipment selection, and project strategy — tailored to optimize performance, safety, and lifecycle value.",
   },
   {
-    image: constructionImg,
+    image: serviceImg03,
     title: "Construction",
     description:
       "Full-scope EPC and industrial construction services delivered with precision, speed, and safety across oil, gas, and energy facilities.",
   },
   {
-    image: engineeringImg,
+    image: serviceImg04,
     title: "Engineering",
     description:
       "Designing robust, cost-effective engineering solutions with a focus on functionality, reliability, and compliance for industrial infrastructure projects.",
@@ -196,27 +206,33 @@ export const partnersLogo = [
 
 export const teamMembers = [
   {
-    image: teamImg01,
+    png: teamImg01,
+    webp: teamImg01Webp,
     roles: ["Managing Director"],
   },
   {
-    image: teamImg02,
+    png: teamImg02,
+    webp: teamImg02Webp,
     roles: ["Head of Field Operations"],
   },
   {
-    image: teamImg03,
+    png: teamImg03,
+    webp: teamImg03Webp,
     roles: ["Lead Process Engineer"],
   },
   {
-    image: teamImg04,
+    png: teamImg04,
+    webp: teamImg04Webp,
     roles: ["EPC Project Manager"],
   },
   {
-    image: teamImg05,
+    png: teamImg05,
+    webp: teamImg05Webp,
     roles: ["HSE & Compliance Officer"],
   },
   {
-    image: teamImg06,
+    png: teamImg06,
+    webp: teamImg06Webp,
     roles: ["Business Development Manager"],
   },
 ];
@@ -323,5 +339,24 @@ export const socialLinks = [
   {
     link: "https://www.linkedin.com/company/reliable-industrail-solutions-engineering/",
     icon: linkedinIcon,
+  },
+];
+
+export const certificationsData = [
+  {
+    img: certification01,
+    label: "Occupational health & safety standard",
+  },
+  {
+    img: certification02,
+    label: "UKAS-accredited certification",
+  },
+  {
+    img: certification03,
+    label: "Quality management standard",
+  },
+  {
+    img: certification04,
+    label: "UKAS-accredited certification",
   },
 ];

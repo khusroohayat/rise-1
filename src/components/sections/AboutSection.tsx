@@ -7,6 +7,9 @@ import {
 import aboutImg01 from "../../assets/images/about-img-01.png";
 import aboutImg02 from "../../assets/images/about-img-02.png";
 import aboutImg03 from "../../assets/images/about-img-03.png";
+import aboutImg01Webp from "../../assets/images/about-img-01.webp";
+import aboutImg02Webp from "../../assets/images/about-img-02.webp";
+import aboutImg03Webp from "../../assets/images/about-img-03.webp";
 import SectionLabel from "../common/SectionLabel";
 import SectionTitle from "../common/SectionTitle";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,6 +19,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import { useState } from "react";
+
+const aboutImages = [
+  { png: aboutImg02, webp: aboutImg02Webp },
+  { png: aboutImg01, webp: aboutImg01Webp },
+  { png: aboutImg03, webp: aboutImg03Webp },
+];
 
 const AboutSection = () => {
   const [swiperRef, setSwiperRef] = useState<SwiperCore | null>(null);
@@ -109,14 +118,18 @@ const AboutSection = () => {
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          {[aboutImg02, aboutImg01, aboutImg03].map((item, idx) => (
+          {aboutImages.map((img, idx) => (
             <SwiperSlide key={idx} className="!h-auto">
-              <div className="h-full overflow-hidden rounded-[1.2rem]">
-                <img
-                  src={item}
-                  alt="About Image"
-                  className="size-full object-cover object-center"
-                />
+              <div className="block h-full overflow-hidden rounded-[1.2rem]">
+                <picture>
+                  <source srcSet={img.webp} type="image/webp" />
+                  <img
+                    src={img.png}
+                    alt={`About Image ${idx + 1}`}
+                    loading="lazy"
+                    className="size-full object-cover object-center"
+                  />
+                </picture>
               </div>
             </SwiperSlide>
           ))}

@@ -65,7 +65,7 @@ const ContactSection = () => {
             <div data-aos="fade-up" data-aos-delay="600">
               <Button variant="dark">
                 <span>Contact Us</span>
-                <div className="relative inline-flex size-[3.3rem] items-center justify-center rounded-full bg-white">
+                <div className="relative inline-flex size-[3.3rem] items-center justify-center rounded-[.8rem] bg-white">
                   <div className="size-[1.7rem] overflow-hidden">
                     <div className="flex -translate-x-full transform transition-transform duration-300 group-hover:translate-x-0">
                       <div className="flex size-full items-center justify-center">

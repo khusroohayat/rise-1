@@ -8,10 +8,10 @@ const buttonVariants = cva("", {
   variants: {
     variant: {
       default:
-        "group inline-flex justify-center items-center gap-[1rem] rounded-full cursor-pointer text-[1.4rem] md:text-[1.6rem] leading-[2rem] pl-[1.4rem] pr-[.3rem] py-[.3rem] bg-[#006BFF] text-white",
-      dark: "group inline-flex justify-center items-center gap-[1rem] rounded-full cursor-pointer text-[1.4rem] md:text-[1.6rem] leading-[2rem] pl-[1.4rem] pr-[.3rem] py-[.3rem] bg-[#0B3558] text-white",
+        "group inline-flex justify-center items-center gap-[1rem] rounded-[1.2rem] cursor-pointer text-[1.4rem] md:text-[1.6rem] leading-[2rem] pl-[1.4rem] pr-[.3rem] py-[.3rem] bg-[#006BFF] text-white",
+      dark: "group inline-flex justify-center items-center gap-[1rem] rounded-[1.2rem] cursor-pointer text-[1.4rem] md:text-[1.6rem] leading-[2rem] pl-[1.4rem] pr-[.3rem] py-[.3rem] bg-[#0B3558] text-white",
       transparent:
-        "hover:underline inline-flex justify-center items-center gap-[1rem] rounded-full cursor-pointer text-[1.4rem] md:text-[1.6rem] leading-[2rem]",
+        "hover:underline inline-flex justify-center items-center gap-[1rem] rounded-[1.2rem] cursor-pointer text-[1.4rem] md:text-[1.6rem] leading-[2rem]",
     },
   },
   defaultVariants: {

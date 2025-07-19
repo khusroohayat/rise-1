@@ -220,6 +220,7 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 0.8rem;
 }
 .custom-pagination .swiper-pagination-bullet-active {
   background: #0b3558;

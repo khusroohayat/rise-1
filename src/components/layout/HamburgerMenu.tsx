@@ -143,7 +143,7 @@ const HamburgerMenu = () => {
         <div className="flex justify-center px-[2rem] pb-[8rem] md:px-[4rem]">
           <Button
             onClick={() => setIsOpen(false)}
-            className="h-[4rem] w-full rounded-[.8rem] text-[1.8rem] leading-[2.6rem]"
+            className="h-[4rem] w-full text-[1.8rem] leading-[2.6rem]"
           >
             <span>Contact</span>
           </Button>
