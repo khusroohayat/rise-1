@@ -1,29 +1,41 @@
-import { ArrowRight } from "lucide-react";
+// import { ArrowRight } from "lucide-react";
 import { Button } from "../ui/button";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
-import heroImg01 from "../../assets/images/hero-img-01.jpg";
-import heroImg02 from "../../assets/images/hero-img-02.jpg";
-import heroImg03 from "../../assets/images/hero-img-03.jpg";
-import heroImg01Webp from "../../assets/images/hero-img-01.webp";
-import heroImg02Webp from "../../assets/images/hero-img-02.webp";
-import heroImg03Webp from "../../assets/images/hero-img-03.webp";
+import heroImg01 from "../../assets/images/homepage-hero-img-01.jpg";
+import heroImg02 from "../../assets/images/homepage-hero-img-02.jpg";
+import heroImg03 from "../../assets/images/homepage-hero-img-03.jpg";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const heroImages = [
-  { png: heroImg01, webp: heroImg01Webp },
-  { png: heroImg02, webp: heroImg02Webp },
-  { png: heroImg03, webp: heroImg03Webp },
+  {
+    png: heroImg02,
+    title:
+      "Industrial EPC, Maintenance, and Engineering Support for Oil and Gas Industry",
+    desc: "Delivering expert EPC, maintenance, and field services that minimize downtime and maximize operational reliability for your assets.",
+  },
+  {
+    png: heroImg01,
+    title:
+      "Comprehensive EPC and Maintenance Services for Oil and Gas Operations",
+    desc: "Providing reliable engineering and field solutions that ensure asset uptime, reduce delays, and support safe and efficient oil and gas production.",
+  },
+  {
+    png: heroImg03,
+    title: "Reliable Engineering, EPC, and Maintenance for the Energy Sector",
+    desc: "Expert-driven support in EPC and field services to enhance asset longevity, boost performance, and minimize costly operational disruptions.",
+  },
 ];
 
 const HeroSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="px-[2rem] md:px-[4rem]">
+    <section className="px-[2rem] pt-[8rem] md:px-[4rem]">
       <div
         style={{ height: "calc(100vh - 100px)" }}
         className="mx-auto max-w-[150rem] overflow-hidden rounded-[1.5rem]"
@@ -45,7 +57,6 @@ const HeroSection = () => {
 
               <div className="size-full">
                 <picture>
-                  <source srcSet={item.webp} type="image/webp" />
                   <img
                     src={item.png}
                     alt="Hero Image"
@@ -58,10 +69,11 @@ const HeroSection = () => {
               <div className="absolute bottom-[5rem] left-1/2 w-full max-w-[134rem] -translate-x-1/2 rounded-[.8rem] bg-[#006BFF]/50 p-[2rem]">
                 <div className="flex flex-col items-center justify-center gap-[4rem] text-center md:gap-[6rem] xl:flex-row xl:items-end xl:justify-between xl:text-left">
                   <h1
-                    className={`max-w-[70rem] text-[2.4rem] leading-[3rem] font-semibold text-white uppercase md:text-[4rem] md:leading-[5.6rem] md:font-bold`}
+                    className={`max-w-[70rem] text-[2.4rem] leading-[3rem] font-semibold text-white uppercase transition-opacity delay-200 duration-700 md:text-[4rem] md:leading-[5.6rem] md:font-bold ${
+                      activeIndex === idx ? "opacity-100" : "opacity-0"
+                    }`}
                   >
-                    Industrial EPC, Maintenance, and Engineering Support for Oil
-                    and Gas Industry
+                    {item.title}
                   </h1>
 
                   <div className="max-w-[50rem]">
@@ -74,19 +86,21 @@ const HeroSection = () => {
                     </div>
 
                     <p
-                      className={`my-[2rem] text-white md:text-[2rem] md:leading-[3rem] md:font-normal`}
+                      className={`my-[2rem] text-white transition-opacity delay-200 duration-700 md:text-[2rem] md:leading-[3rem] md:font-normal ${
+                        activeIndex === idx ? "opacity-100" : "opacity-0"
+                      }`}
                     >
-                      Delivering expert EPC, maintenance, and field services
-                      that minimize downtime and maximize operational
-                      reliability for your assets.
+                      {item.desc}
                     </p>
 
                     <div
                       className={`flex flex-col items-center justify-center gap-[1rem] md:flex-row xl:justify-start`}
                     >
-                      <Button variant="dark">
-                        <span>Explore Our Services</span>
-                        <div className="relative inline-flex size-[3.3rem] items-center justify-center rounded-[.8rem] bg-white">
+                      <Button variant="dark" asChild>
+                        <NavLink to="/services">
+                          <span>Explore Our Services</span>
+                        </NavLink>
+                        {/* <div className="relative inline-flex size-[3.3rem] items-center justify-center rounded-[.8rem] bg-white">
                           <div className="size-[1.7rem] overflow-hidden">
                             <div className="flex -translate-x-full transform transition-transform duration-300 group-hover:translate-x-0">
                               <div className="flex size-full items-center justify-center">
@@ -98,11 +112,13 @@ const HeroSection = () => {
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </div> */}
                       </Button>
 
-                      <Button variant="transparent" className="text-white">
-                        <span>View Projects</span>
+                      <Button className="text-white">
+                        <NavLink to="/projects">
+                          <span>View Projects</span>
+                        </NavLink>
                       </Button>
                     </div>
                   </div>

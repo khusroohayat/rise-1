@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ScrollToTop from "@/components/common/ScrollToTop";
 
 const App = () => {
   useEffect(() => {
@@ -16,6 +17,8 @@ const App = () => {
 
   return (
     <>
+      <ScrollToTop />
+
       <Header />
       <Routes>
         {pageRoutes.map((item, idx) => (

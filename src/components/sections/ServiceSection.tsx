@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { useEffect, useRef, useState } from "react";
 import { NavigationOptions } from "swiper/types";
+import { NavLink } from "react-router-dom";
 
 const ServiceSection = () => {
   const prevRef = useRef<HTMLButtonElement>(null);
@@ -50,9 +51,11 @@ const ServiceSection = () => {
           </div>
 
           <div data-aos="fade-up" data-aos-delay="200">
-            <Button variant="dark">
-              <span>Explore All Services</span>
-              <div className="relative inline-flex size-[3.3rem] items-center justify-center rounded-[.8rem] bg-white">
+            <Button variant="dark" asChild>
+              <NavLink to="/services">
+                <span>Explore All Services</span>
+              </NavLink>
+              {/* <div className="relative inline-flex size-[3.3rem] items-center justify-center rounded-[.8rem] bg-white">
                 <div className="size-[1.7rem] overflow-hidden">
                   <div className="flex -translate-x-full transform transition-transform duration-300 group-hover:translate-x-0">
                     <div className="flex size-full items-center justify-center">
@@ -64,7 +67,7 @@ const ServiceSection = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </Button>
           </div>
         </div>
@@ -118,17 +121,17 @@ const ServiceSection = () => {
                   </div>
 
                   <div className="flex flex-col gap-[1rem] p-[1.6rem]">
-                    <div className="inline-flex w-max items-center gap-[.8rem] rounded-[.4rem] bg-[#EFECEB] px-[1rem] py-[.6rem] text-[1.2rem] leading-[1.2rem] font-normal">
-                      <Bookmark className="size-[2rem]" />
+                    <div className="inline-flex w-max items-center gap-[.6rem] rounded-[.4rem] bg-[#EFECEB] px-[1rem] py-[.6rem] text-[1rem] leading-[1rem] font-normal">
+                      <Bookmark className="size-[1.6rem]" />
                       <span>Services</span>
                     </div>
 
                     <div className="flex flex-col items-start gap-[1rem]">
-                      <h4 className="text-[2.6rem] leading-[3.6rem] font-medium">
+                      <h3 className="text-[1.8rem] leading-[2.4rem] font-normal tracking-[-0.36px]">
                         {item.title}
-                      </h4>
+                      </h3>
 
-                      <p className="text-[1.8rem] leading-[2.8rem] font-light tracking-[0.2px] text-[#425466]">
+                      <p className="text-[1.4rem] font-light text-[#425466]">
                         {item.description}
                       </p>
                     </div>

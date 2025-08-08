@@ -87,15 +87,12 @@ const TeamSection = () => {
               <SwiperSlide key={idx}>
                 <>
                   <div className="h-auto w-full overflow-hidden rounded-[.8rem]">
-                    <picture>
-                      <source srcSet={item.webp} type="image/webp" />
-                      <img
-                        src={item.png}
-                        alt="Team Image"
-                        loading="lazy"
-                        className="size-full object-contain object-center"
-                      />
-                    </picture>
+                    <img
+                      src={item.png}
+                      alt="Team Image"
+                      loading="lazy"
+                      className="size-full object-contain object-center"
+                    />
                   </div>
 
                   <ul className="mt-[.6rem] flex flex-wrap items-center gap-x-[.5rem] text-[1.4rem] leading-[2rem]">

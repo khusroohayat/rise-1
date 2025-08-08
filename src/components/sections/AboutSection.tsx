@@ -7,30 +7,28 @@ import {
 import aboutImg01 from "../../assets/images/about-img-01.png";
 import aboutImg02 from "../../assets/images/about-img-02.png";
 import aboutImg03 from "../../assets/images/about-img-03.png";
-import aboutImg01Webp from "../../assets/images/about-img-01.webp";
-import aboutImg02Webp from "../../assets/images/about-img-02.webp";
-import aboutImg03Webp from "../../assets/images/about-img-03.webp";
 import SectionLabel from "../common/SectionLabel";
 import SectionTitle from "../common/SectionTitle";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper";
-import { EffectFade } from "swiper/modules";
+import { Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import { useState } from "react";
 
 const aboutImages = [
-  { png: aboutImg02, webp: aboutImg02Webp },
-  { png: aboutImg01, webp: aboutImg01Webp },
-  { png: aboutImg03, webp: aboutImg03Webp },
+  { png: aboutImg01 },
+  { png: aboutImg02 },
+  { png: aboutImg03 },
 ];
 
 const AboutSection = () => {
   const [swiperRef, setSwiperRef] = useState<SwiperCore | null>(null);
+  const [activeAccordion, setActiveAccordion] = useState("item-1");
 
   return (
-    <section className="bg-[#F7F7F7] px-[2rem] py-[6rem] md:px-[4rem] md:py-[10rem]">
+    <section className="bg-[#f7f7f7] px-[2rem] py-[6rem] md:px-[4rem] md:py-[10rem]">
       <div className="mx-auto grid max-w-[128rem] grid-cols-1 items-center gap-[6rem] xl:grid-cols-2 xl:gap-[0rem]">
         <div className="flex flex-col gap-[4rem] xl:pr-[8rem]">
           <div className="flex flex-col items-center gap-[1rem] text-center xl:items-start xl:text-left">
@@ -48,7 +46,7 @@ const AboutSection = () => {
             className="w-full"
             type="single"
             collapsible
-            defaultValue="item-1" // ✅ this opens accordion 1 on load
+            value={activeAccordion} // controlled accordion
             onValueChange={(value) => {
               if (!swiperRef) return;
               if (value === "item-1") swiperRef.slideTo(0);
@@ -58,9 +56,9 @@ const AboutSection = () => {
           >
             <AccordionItem
               value="item-1"
-              className="!border-b border-solid border-[#C9C9C9] py-[1rem]"
+              className="relative !border-b border-solid border-[#C9C9C9] py-[1rem]"
             >
-              <AccordionTrigger className="rounded-none border-[#006BFF] text-[1.6rem] leading-[2.4rem] font-normal !no-underline data-[state=open]:border-l-[4px] data-[state=open]:pl-[1rem] md:text-[1.8rem]">
+              <AccordionTrigger className="rounded-none text-[1.6rem] leading-[2.4rem] font-normal !no-underline md:text-[1.8rem]">
                 <span>Who We Are</span>
               </AccordionTrigger>
               <AccordionContent className="pt-[1.5rem] text-[1.4rem] font-light">
@@ -72,13 +70,22 @@ const AboutSection = () => {
                   industrial maintenance.
                 </p>
               </AccordionContent>
+              {/* Progress bar only visible when this item is active */}
+              {activeAccordion === "item-1" && (
+                <div className="absolute bottom-[-1.5px] left-0 h-[3px] w-full overflow-hidden">
+                  <div
+                    key={activeAccordion} // ensures animation restarts
+                    className="progress-line absolute top-0 left-0 h-full bg-[#006BFF]"
+                  />
+                </div>
+              )}
             </AccordionItem>
 
             <AccordionItem
               value="item-2"
-              className="!border-b border-solid border-[#C9C9C9] py-[1rem]"
+              className="relative !border-b border-solid border-[#C9C9C9] py-[1rem]"
             >
-              <AccordionTrigger className="rounded-none border-[#006BFF] text-[1.6rem] leading-[2.4rem] font-normal !no-underline data-[state=open]:border-l-[4px] data-[state=open]:pl-[1rem] md:text-[1.8rem]">
+              <AccordionTrigger className="rounded-none text-[1.6rem] leading-[2.4rem] font-normal !no-underline md:text-[1.8rem]">
                 <span>Our Approach</span>
               </AccordionTrigger>
               <AccordionContent className="pt-[1.5rem] text-[1.4rem] font-light">
@@ -89,13 +96,22 @@ const AboutSection = () => {
                   performance monitoring.
                 </p>
               </AccordionContent>
+              {/* Progress bar only visible when this item is active */}
+              {activeAccordion === "item-2" && (
+                <div className="absolute bottom-[-1.5px] left-0 h-[3px] w-full overflow-hidden">
+                  <div
+                    key={activeAccordion} // ensures animation restarts
+                    className="progress-line absolute top-0 left-0 h-full bg-[#006BFF]"
+                  />
+                </div>
+              )}
             </AccordionItem>
 
             <AccordionItem
               value="item-3"
-              className="!border-b border-solid border-[#C9C9C9] py-[1rem]"
+              className="relative !border-b border-solid border-[#C9C9C9] py-[1rem]"
             >
-              <AccordionTrigger className="rounded-none border-[#006BFF] text-[1.6rem] leading-[2.4rem] font-normal !no-underline data-[state=open]:border-l-[4px] data-[state=open]:pl-[1rem] md:text-[1.8rem]">
+              <AccordionTrigger className="rounded-none text-[1.6rem] leading-[2.4rem] font-normal !no-underline md:text-[1.8rem]">
                 <span>Our Commitment</span>
               </AccordionTrigger>
               <AccordionContent className="pt-[1.5rem] text-[1.4rem] font-light">
@@ -106,6 +122,15 @@ const AboutSection = () => {
                   and respect for the environment.
                 </p>
               </AccordionContent>
+              {/* Progress bar only visible when this item is active */}
+              {activeAccordion === "item-3" && (
+                <div className="absolute bottom-[-1.5px] left-0 h-[3px] w-full overflow-hidden">
+                  <div
+                    key={activeAccordion} // ensures animation restarts
+                    className="progress-line absolute top-0 left-0 h-full bg-[#006BFF]"
+                  />
+                </div>
+              )}
             </AccordionItem>
           </Accordion>
         </div>
@@ -113,16 +138,23 @@ const AboutSection = () => {
         <Swiper
           onSwiper={setSwiperRef}
           effect="fade"
-          modules={[EffectFade]}
+          modules={[Autoplay, EffectFade]}
+          onSlideChange={(swiper) => {
+            const index = swiper.realIndex;
+            setActiveAccordion(`item-${index + 1}`);
+          }}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
           className="mySwiper"
           data-aos="fade-up"
           data-aos-delay="200"
         >
           {aboutImages.map((img, idx) => (
             <SwiperSlide key={idx} className="!h-auto">
-              <div className="block h-full overflow-hidden rounded-[1.2rem]">
+              <div className="block h-full overflow-hidden rounded-[1.2rem] bg-[#F7F7F7]">
                 <picture>
-                  <source srcSet={img.webp} type="image/webp" />
                   <img
                     src={img.png}
                     alt={`About Image ${idx + 1}`}

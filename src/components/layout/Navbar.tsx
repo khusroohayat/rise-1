@@ -11,50 +11,39 @@ const Navbar = () => {
         <li>
           <NavigationDropdown
             title="About"
+            titleLink="/about"
             media={dropdownImg1}
-            description="Reliable industrial services built for safety, performance, and project success."
+            description="Discover who we are, how we work, and what we stand for."
             navItems={[
               {
-                label: "Our Team",
-                link: "/",
+                label: "Who We Are",
+                link: "/about#who-we-are",
                 description:
-                  "On-site maintenance, repairs, and commissioning by skilled technicians.",
+                  "Get to know the people, purpose, and experience behind RISE Engineering.",
               },
               {
-                label: "Certifications",
-                link: "/",
+                label: "Our Approach",
+                link: "/about#our-approach",
                 description:
-                  "Expert guidance for equipment, operations, and project planning success.",
+                  "How we plan, execute, and deliver industrial solutions that work in the real world.",
+              },
+              {
+                label: "Our Commitment",
+                link: "/about#our-commitment",
+                description:
+                  "Our promise to safety, quality, and long-term partnerships with every client.",
+              },
+              {
+                label: "Key Policies",
+                link: "/about#key-policies",
+                description:
+                  "Explore the principles that guide our work — safety, reliability, and integrity.",
               },
               {
                 label: "Careers",
-                link: "/",
+                link: "/about#careers",
                 description:
-                  "Reliable industrial construction delivered safely, efficiently, and on time.",
-              },
-              {
-                label: "Contact",
-                link: "/",
-                description:
-                  "Tailored engineering solutions focused on reliability, compliance, and performance.",
-              },
-              {
-                label: "Protective Coating",
-                link: "/",
-                description:
-                  "Durable coatings to protect assets in harsh industrial environments.",
-              },
-              {
-                label: "Fire-Proofing",
-                link: "/",
-                description:
-                  "Fire-resistant systems for industrial safety and regulatory compliance assurance.",
-              },
-              {
-                label: "Inspection & Testing",
-                link: "/",
-                description:
-                  "Certified inspections to ensure operational safety, quality, and readiness.",
+                  "Discover opportunities to grow with a team built on experience and trust.",
               },
             ]}
           />
@@ -62,50 +51,45 @@ const Navbar = () => {
         <li>
           <NavigationDropdown
             title="Services"
+            titleLink="/services"
             media={dropdownImg2}
-            description="Reliable industrial services built for safety, performance, and project success."
+            description="Explore the range of solutions we provide across oil and gas."
             navItems={[
               {
                 label: "Field Services",
-                link: "/",
+                link: "/services#field-services",
                 description:
                   "On-site maintenance, repairs, and commissioning by skilled technicians.",
               },
               {
                 label: "Consultancy",
-                link: "/",
+                link: "/services#consultancy",
                 description:
                   "Expert guidance for equipment, operations, and project planning success.",
               },
               {
                 label: "Contruction",
-                link: "/",
+                link: "/services#construction",
                 description:
                   "Reliable industrial construction delivered safely, efficiently, and on time.",
               },
               {
                 label: "Engineering",
-                link: "/",
+                link: "/services#engineering",
                 description:
                   "Tailored engineering solutions focused on reliability, compliance, and performance.",
               },
               {
                 label: "Protective Coating",
-                link: "/",
+                link: "/services#protective-coating",
                 description:
                   "Durable coatings to protect assets in harsh industrial environments.",
               },
               {
                 label: "Fire-Proofing",
-                link: "/",
+                link: "/services#fire-proofing",
                 description:
                   "Fire-resistant systems for industrial safety and regulatory compliance assurance.",
-              },
-              {
-                label: "Inspection & Testing",
-                link: "/",
-                description:
-                  "Certified inspections to ensure operational safety, quality, and readiness.",
               },
             ]}
           />
@@ -113,62 +97,67 @@ const Navbar = () => {
         <li>
           <NavigationDropdown
             title="Projects"
+            titleLink="/projects"
             media={dropdownImg3}
-            description="Reliable industrial services built for safety, performance, and project success."
+            description="See how we deliver results across complex industrial environments."
             navItems={[
               {
-                label: "Field Services",
-                link: "/",
+                label: "Completed Projects",
+                link: "/projects#completed-projects",
                 description:
-                  "On-site maintenance, repairs, and commissioning by skilled technicians.",
+                  "A showcase of our successfully delivered engineering and maintenance work.",
               },
               {
-                label: "Consultancy",
-                link: "/",
+                label: "Ongoing Projects",
+                link: "/projects#ongoing-projects",
                 description:
-                  "Expert guidance for equipment, operations, and project planning success.",
+                  "Explore current projects where our teams are actively working on-site.",
               },
               {
-                label: "Contruction",
-                link: "/",
+                label: "Project Highlights",
+                link: "/projects#project-highlights",
                 description:
-                  "Reliable industrial construction delivered safely, efficiently, and on time.",
-              },
-              {
-                label: "Engineering",
-                link: "/",
-                description:
-                  "Tailored engineering solutions focused on reliability, compliance, and performance.",
-              },
-              {
-                label: "Protective Coating",
-                link: "/",
-                description:
-                  "Durable coatings to protect assets in harsh industrial environments.",
-              },
-              {
-                label: "Fire-Proofing",
-                link: "/",
-                description:
-                  "Fire-resistant systems for industrial safety and regulatory compliance assurance.",
-              },
-              {
-                label: "Inspection & Testing",
-                link: "/",
-                description:
-                  "Certified inspections to ensure operational safety, quality, and readiness.",
+                  "Key milestones, challenges, and achievements from select projects.",
               },
             ]}
           />
         </li>
         <li>
-          <NavigationLink link="/blog" label="Blogs" />
+          <NavigationDropdown
+            title="Resources"
+            titleLink="/resources"
+            media={dropdownImg1}
+            description="Explore our knowledge base from expert insights to technical documents."
+            navItems={[
+              {
+                label: "Blogs",
+                link: "/blog",
+                description:
+                  "Insights and articles from the world of engineering, EPCC, and oil & gas.",
+              },
+              {
+                label: "Case Studies",
+                link: "/resources#case-studies",
+                description:
+                  "Real-world examples of how RISE delivers results.",
+              },
+              {
+                label: "News & Updates",
+                link: "/resources#news-updates",
+                description:
+                  "The latest project launches, and company milestones from RISE Engineering.",
+              },
+              {
+                label: "Whitepaper",
+                link: "/resources#white-paper",
+                description:
+                  "In-depth technical papers and research on engineering tailored for decision-makers.",
+              },
+            ]}
+          />
         </li>
         <li>
-          <NavigationLink link="/" label="Careers" />
-        </li>
-        <li>
-          <NavigationLink link="/" label="Contact" />
+          <NavigationLink link="/contact" label="Contact" />
         </li>
       </ul>
     </nav>

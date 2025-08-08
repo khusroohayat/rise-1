@@ -3,13 +3,17 @@ import Logo from "../../assets/images/logo-2.png";
 
 import NavigationLink from "../common/NavigationLink";
 import {
+  aboutLinks,
   certificationsData,
   companyLinks,
+  preojectsLinks,
   quickLinks,
   resourcesLinks,
+  servicesLinks,
   socialLinks,
   solutionsLinks,
 } from "@/constants/constants";
+import NavigationHashLink from "../common/NavigationHashLink";
 
 const Footer = () => {
   return (
@@ -79,11 +83,11 @@ const Footer = () => {
         <div className="flex flex-col justify-between gap-[4rem]">
           <div className="grid grid-cols-2 gap-[4rem] px-[2rem] pt-[2rem] pb-[2rem] md:grid-cols-4 md:gap-[6rem] md:px-[4rem] md:pt-[4rem]">
             <div className="flex flex-col gap-[2rem]">
-              <h5 className="font-normal !text-[#006BFF] uppercase">Company</h5>
+              <h5 className="font-normal !text-[#006BFF] uppercase">About</h5>
 
               <div className="flex flex-col items-start gap-[2rem]">
-                {companyLinks.map((item, idx) => (
-                  <NavigationLink
+                {aboutLinks.map((item, idx) => (
+                  <NavigationHashLink
                     key={idx}
                     link={item.link}
                     label={item.label}
@@ -94,12 +98,28 @@ const Footer = () => {
 
             <div className="flex flex-col gap-[2rem]">
               <h5 className="font-normal !text-[#006BFF] uppercase">
-                Solutions
+                Services
               </h5>
 
               <div className="flex flex-col items-start gap-[2rem]">
-                {solutionsLinks.map((item, idx) => (
-                  <NavigationLink
+                {servicesLinks.map((item, idx) => (
+                  <NavigationHashLink
+                    key={idx}
+                    link={item.link}
+                    label={item.label}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-[2rem]">
+              <h5 className="font-normal !text-[#006BFF] uppercase">
+                Projects
+              </h5>
+
+              <div className="flex flex-col items-start gap-[2rem]">
+                {preojectsLinks.map((item, idx) => (
+                  <NavigationHashLink
                     key={idx}
                     link={item.link}
                     label={item.label}
@@ -115,23 +135,7 @@ const Footer = () => {
 
               <div className="flex flex-col items-start gap-[2rem]">
                 {resourcesLinks.map((item, idx) => (
-                  <NavigationLink
-                    key={idx}
-                    link={item.link}
-                    label={item.label}
-                  />
-                ))}
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-[2rem]">
-              <h5 className="font-normal !text-[#006BFF] uppercase">
-                Quick Links
-              </h5>
-
-              <div className="flex flex-col items-start gap-[2rem]">
-                {quickLinks.map((item, idx) => (
-                  <NavigationLink
+                  <NavigationHashLink
                     key={idx}
                     link={item.link}
                     label={item.label}

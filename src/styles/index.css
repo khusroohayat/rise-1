@@ -227,6 +227,24 @@ h6 {
   color: var(--white-color);
 }
 
+/* Page Hero Swiper Custom Pagination */
+
+.page-hero-custom-pagination .swiper-pagination-bullet {
+  background: #0b3558;
+  color: var(--white-color);
+  transition: 0.3s;
+  width: 1.4rem;
+  height: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+.page-hero-custom-pagination .swiper-pagination-bullet-active {
+  background: #0b3558;
+  color: var(--white-color);
+}
+
 /* Contact Section  */
 
 @keyframes pulseScale {
@@ -237,4 +255,19 @@ h6 {
   50% {
     transform: scale(1.2);
   }
+}
+
+/* Progress Line */
+
+@keyframes progressLine {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.progress-line {
+  animation: progressLine 5s linear forwards;
 }

@@ -1,7 +1,20 @@
 import Blog from "@/pages/Blog";
 import Home from "@/pages/Home";
 import Post from "@/pages/Post";
-import { Briefcase, History, ShieldCheck, UsersRound } from "lucide-react";
+import {
+  BadgeCheck,
+  Ban,
+  Briefcase,
+  Car,
+  FileText,
+  Hand,
+  History,
+  Leaf,
+  MessageCircleWarning,
+  Scale,
+  ShieldCheck,
+  UsersRound,
+} from "lucide-react";
 import unitedEnergyLogo from "../assets/images/united-energy.png";
 import primeInternationalLogo from "../assets/images/prime-international.png";
 import pakistanPetroleumLogo from "../assets/images/pakistan-petroleum.png";
@@ -12,18 +25,12 @@ import alHajLogo from "../assets/images/al-haj.png";
 import dewanPetroleumLogo from "../assets/images/dewan-petroleum.png";
 import mariEnergiesLogo from "../assets/images/mari-energies.png";
 import cooperServicesLogo from "../assets/images/cooper-services.png";
-import teamImg01 from "../assets/images/team-img-01.png";
-import teamImg02 from "../assets/images/team-img-02.png";
-import teamImg03 from "../assets/images/team-img-03.png";
-import teamImg04 from "../assets/images/team-img-04.png";
-import teamImg05 from "../assets/images/team-img-05.png";
-import teamImg06 from "../assets/images/team-img-06.png";
-import teamImg01Webp from "../assets/images/team-img-01.webp";
-import teamImg02Webp from "../assets/images/team-img-02.webp";
-import teamImg03Webp from "../assets/images/team-img-03.webp";
-import teamImg04Webp from "../assets/images/team-img-04.webp";
-import teamImg05Webp from "../assets/images/team-img-05.webp";
-import teamImg06Webp from "../assets/images/team-img-06.webp";
+import teamImg01 from "../assets/images/team-card-01.png";
+import teamImg02 from "../assets/images/team-card-02.png";
+import teamImg03 from "../assets/images/team-card-03.png";
+import teamImg04 from "../assets/images/team-card-04.png";
+import teamImg05 from "../assets/images/team-card-05.png";
+import teamImg06 from "../assets/images/team-card-06.png";
 import facebookIcon from "../assets/images/facebook-icon.svg";
 import instagramIcon from "../assets/images/instagram-icon.svg";
 import twitterIcon from "../assets/images/twitter-icon.svg";
@@ -32,16 +39,23 @@ import certification01 from "../assets/images/certification-01.svg";
 import certification02 from "../assets/images/certification-02.svg";
 import certification03 from "../assets/images/certification-03.svg";
 import certification04 from "../assets/images/certification-04.svg";
-import serviceImg01 from "../assets/images/service-img-01.png";
-import serviceImg02 from "../assets/images/service-img-02.png";
-import serviceImg03 from "../assets/images/service-img-03.jpg";
-import serviceImg04 from "../assets/images/service-img-04.png";
+import fieldServicesImg from "../assets/images/field-services-img.png";
+import constructionServiceImg from "../assets/images/construction-service-img.png";
+import consultancyServiceImg from "../assets/images/consultancy-service-img.png";
+import protectiveCoatingServiceImg from "../assets/images/protective-coating-service-img.png";
+import engineeringServiceImg from "../assets/images/engineering-service-img.png";
+import fireProofingServiceImg from "../assets/images/fire-proofing-service-img.png";
+import About from "@/pages/About";
+import Services from "@/pages/Services";
+import Projects from "@/pages/Projects";
+import Resources from "@/pages/Resources";
+import Contact from "@/pages/Contact";
 
 // Mobile Navigation Data
 
 export const mobileNavigationLinkData = [
   {
-    link: "/",
+    link: "/about",
     label: "About",
   },
   {
@@ -98,34 +112,57 @@ export const pageRoutes = [
   { path: "/", element: <Home /> },
   { path: "/blog", element: <Blog /> },
   { path: "/blog/:slug", element: <Post /> },
+  { path: "/about", element: <About /> },
+  { path: "/services", element: <Services /> },
+  { path: "/projects", element: <Projects /> },
+  { path: "/resources", element: <Resources /> },
+  { path: "/contact", element: <Contact /> },
 ];
 
 // Services Section Data
 
 export const servicesData = [
   {
-    image: serviceImg01,
+    hashId: "field-services",
+    image: fieldServicesImg,
     title: "Field Services",
     description:
-      "On-site maintenance, troubleshooting, and commissioning support to keep your equipment running reliably and efficiently under real-world conditions.",
+      "On-site support to keep your operations running smoothly and safely. We deliver hands-on field expertise, from equipment handling to real-time troubleshooting.",
   },
   {
-    image: serviceImg02,
+    hashId: "consultancy",
+    image: consultancyServiceImg,
     title: "Consultancy",
     description:
-      "Expert guidance on operations, equipment selection, and project strategy — tailored to optimize performance, safety, and lifecycle value.",
+      "Strategic guidance tailored to complex energy projects. Our experts help you navigate project challenges with data-driven, practical solutions.",
   },
   {
-    image: serviceImg03,
+    hashId: "construction",
+    image: constructionServiceImg,
     title: "Construction",
     description:
-      "Full-scope EPC and industrial construction services delivered with precision, speed, and safety across oil, gas, and energy facilities.",
+      "Efficient project execution with a safety-first mindset.From groundwork to final build, we ensure timelines are met with quality at every level.",
   },
   {
-    image: serviceImg04,
+    hashId: "engineering",
+    image: engineeringServiceImg,
     title: "Engineering",
     description:
-      "Designing robust, cost-effective engineering solutions with a focus on functionality, reliability, and compliance for industrial infrastructure projects.",
+      "Precision-driven designs for high-performance infrastructure. Our engineering services combine innovation and compliance to bring concepts to life.",
+  },
+  {
+    hashId: "protective-coating",
+    image: protectiveCoatingServiceImg,
+    title: "Protective Coating",
+    description:
+      "Corrosion-resistant coatings for long-lasting asset protection. We apply advanced coatings that shield your equipment and structures from harsh environments.",
+  },
+  {
+    hashId: "fire-proofing",
+    image: fireProofingServiceImg,
+    title: "Fire-Proofing",
+    description:
+      "Life-saving passive fire protection systems. We implement robust fire-proofing solutions that meet safety regulations and reduce risk.",
   },
 ];
 
@@ -207,77 +244,94 @@ export const partnersLogo = [
 export const teamMembers = [
   {
     png: teamImg01,
-    webp: teamImg01Webp,
     roles: ["Managing Director"],
   },
   {
     png: teamImg02,
-    webp: teamImg02Webp,
     roles: ["Head of Field Operations"],
   },
   {
     png: teamImg03,
-    webp: teamImg03Webp,
     roles: ["Lead Process Engineer"],
   },
   {
     png: teamImg04,
-    webp: teamImg04Webp,
     roles: ["EPC Project Manager"],
   },
   {
     png: teamImg05,
-    webp: teamImg05Webp,
     roles: ["HSE & Compliance Officer"],
   },
   {
     png: teamImg06,
-    webp: teamImg06Webp,
     roles: ["Business Development Manager"],
   },
 ];
 
 // Footer Data
 
-export const companyLinks = [
+export const aboutLinks = [
   {
-    link: "",
-    label: "About Us",
+    link: "/about#who-we-are",
+    label: "Who We Are",
   },
   {
-    link: "",
-    label: "Our Team",
+    link: "/about#our-approach",
+    label: "Our Approach",
   },
   {
-    link: "",
-    label: "Certifications",
+    link: "/about#our-commitment",
+    label: "Our Commitment",
   },
   {
-    link: "",
+    link: "/about#key-policies",
+    label: "Key Policies",
+  },
+  {
+    link: "/about#careers",
     label: "Careers",
-  },
-  {
-    link: "",
-    label: "Contact Us",
   },
 ];
 
-export const solutionsLinks = [
+export const servicesLinks = [
   {
-    link: "",
-    label: "Exploration & Production",
+    link: "/servces#field-services",
+    label: "Field Services",
   },
   {
-    link: "",
-    label: "EPC & Plant Construction",
+    link: "/servces#consultancy",
+    label: "Consultancy",
   },
   {
-    link: "",
-    label: " Maintenance & Field Services",
+    link: "/servces#construction",
+    label: "Construction",
   },
   {
-    link: "",
-    label: "Custom Engineering Support",
+    link: "/servces#engineering",
+    label: "Engineering",
+  },
+  {
+    link: "/servces#protective-coating",
+    label: "Protective Coating",
+  },
+  {
+    link: "/servces#fire-proofing",
+    label: "Fire-Proofing",
+  },
+];
+
+export const preojectsLinks = [
+  {
+    link: "/projects#completed-projects",
+    label: "Completed Projects",
+  },
+  {
+    link: "/projects#ongoing-projects",
+    label: "Ongoing Projects",
+  },
+  {
+    link: "/projects#project-highlights",
+    label: "Project Highlights",
   },
 ];
 
@@ -287,39 +341,16 @@ export const resourcesLinks = [
     label: "Blogs",
   },
   {
-    link: "",
-    label: "Projects",
-  },
-  {
-    link: "",
+    link: "/resources#case-studies",
     label: "Case Studies",
   },
   {
-    link: "",
-    label: "Company Profile",
-  },
-];
-
-export const quickLinks = [
-  {
-    link: "",
-    label: "Home",
+    link: "/resources#news-updates",
+    label: "News & Updates",
   },
   {
-    link: "",
-    label: "Services",
-  },
-  {
-    link: "",
-    label: "Projects",
-  },
-  {
-    link: "/blog",
-    label: "Blogs",
-  },
-  {
-    link: "",
-    label: "Careers",
+    link: "/resources#white-paper",
+    label: "Whitepaper",
   },
 ];
 
@@ -358,5 +389,120 @@ export const certificationsData = [
   {
     img: certification04,
     label: "UKAS-accredited certification",
+  },
+];
+
+export const keyPoliciesData = [
+  {
+    icon: Ban,
+    title: "Substance Abuse Policy",
+    description:
+      "We maintain a strict zero-tolerance policy towards the use of drugs and alcohol in the workplace. RISE Engineering prioritizes safety and productivity by promoting a substance-free environment across all operations.",
+    link: "https://www.risengineering.org/documents/RISE-HSEQ-06_Sustainability_Policy.pdf",
+    color: "#3A53A1",
+  },
+  {
+    icon: Car,
+    title: "Driving and Safety Policy",
+    description:
+      "All employees and contractors operating vehicles or machinery must adhere to strict safety protocols. We ensure that driving practices meet legal, operational, and environmental safety standards at all times.",
+    link: "https://www.risengineering.org/documents/RISE-HSEQ-04_Driving_safety_Policy.pdf",
+    color: "#63A079",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Quality Policy",
+    description:
+      "RISE Engineering is committed to delivering consistent, high-quality outcomes across all projects. We follow industry best practices and continuous improvement models to meet and exceed client expectations.",
+    link: "https://www.risengineering.org/documents/RISE-HSEQ-03_Quality_Policy.pdf",
+    color: "#9B81B0",
+  },
+  {
+    icon: ShieldCheck,
+    title: "HSE Policy",
+    description:
+      "Our Health, Safety, and Environmental policy ensures that all activities are conducted with minimal risk to people, property, and the planet. Safety is ingrained in our culture and operations.",
+    link: "https://www.risengineering.org/documents/RISE-HSEQ-02_HSE_Policy.pdf",
+    color: "#719EB3",
+  },
+  {
+    icon: MessageCircleWarning,
+    title: "Grievance Handling and Conflict Resolution policy",
+    description:
+      "We promote an open and respectful workplace where employees can voice concerns without fear. Our policy ensures timely, fair, and confidential resolution of all grievances and conflicts.",
+    link: "https://www.risengineering.org/documents/RISE-AHR-13_Grievance_handling_conflict_resolution_Policy.pdf",
+    color: "#E68B30",
+  },
+  {
+    icon: FileText,
+    title: "Employee Code of Conduct",
+    description:
+      "All employees are expected to uphold the values of integrity, professionalism, and respect. This code outlines ethical behavior and accountability across all roles and responsibilities.",
+    link: "https://www.risengineering.org/documents/RISE-AHR-12_Employee_Code_of_Conduct.pdf",
+    color: "#8DB6B8",
+  },
+  {
+    icon: Scale,
+    title: "Equal Opportunity and Anti-Discrimination Policy",
+    description:
+      "We are committed to fostering an inclusive workplace where all individuals are treated fairly, regardless of race, gender, religion, or background. Equal opportunity is a cornerstone of our culture.",
+    link: "https://www.risengineering.org/documents/RISE-AHR-11_Equal_Opportunity_anti_discrimination_policy.pdf",
+    color: "#8DB6B8",
+  },
+  {
+    icon: Hand,
+    title: "Anti-Harassment and Bullying Policy",
+    description:
+      "RISE Engineering provides a safe and respectful work environment free from harassment, bullying, or intimidation. All reports are taken seriously and handled with sensitivity and discretion.",
+    link: "https://www.risengineering.org/documents/RISE-AHR-10_Anti_Harassment_Bullying_policy.pdf",
+    color: "#3A53A1",
+  },
+  {
+    icon: Leaf,
+    title: "Sustainability Policy",
+    description:
+      "We integrate sustainable practices into our engineering and construction processes. From resource optimization to eco-friendly materials, we aim to minimize our environmental footprint while maximizing value.",
+    link: "https://www.risengineering.org/documents/Health-Policy.pdf",
+    color: "#E68B30",
+  },
+];
+
+// Faqs Accordion Data
+
+export const faqsAccordionData = [
+  {
+    value: "item-1",
+    title: "What industries do you serve?",
+    content: `We serve a range of sectors including oil & gas, energy, construction, and infrastructure development.`,
+  },
+  {
+    value: "item-2",
+    title: "What is EPCC contracting?",
+    content: `EPCC stands for Engineering, Procurement, Construction & Commissioning — a complete project delivery model where we handle every phase from design to launch.`,
+  },
+  {
+    value: "item-3",
+    title: "Do you provide custom engineering solutions?",
+    content: `Yes, we offer tailor-made engineering services to meet the specific requirements of each project.`,
+  },
+  {
+    value: "item-4",
+    title: "How do you ensure project quality and safety?",
+    content: `We follow rigorous QA/QC protocols, HSE standards, and regular inspections to ensure compliance and safety across all stages.`,
+  },
+  {
+    value: "item-5",
+    title: "Can you assist with post-project support?",
+    content: `Absolutely. We offer post-deployment support such as maintenance, optimization, and technical consultancy.`,
+  },
+  {
+    value: "item-6",
+    title: "Where are your services available?",
+    content: `Our operations extend locally and regionally, depending on the project scope and client needs.`,
+  },
+  {
+    value: "item-7",
+    title: "Do you handle government or large-scale industrial projects?",
+    content: `Yes, we have the capability and experience to manage complex, high-scale government and industrial contracts.`,
   },
 ];

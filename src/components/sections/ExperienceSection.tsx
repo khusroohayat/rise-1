@@ -26,11 +26,11 @@ const ExperienceSection = () => {
                   </div>
 
                   <div className="flex flex-col gap-[.5rem] text-center md:text-left">
-                    <h3 className="text-[2rem] leading-[3rem] font-normal tracking-[-0.36px]">
+                    <h3 className="text-[1.8rem] leading-[2.4rem] font-normal tracking-[-0.36px]">
                       {item.title}
                     </h3>
 
-                    <p className="text-[1.4rem] leading-[2rem] font-light lg:max-w-[40rem]">
+                    <p className="text-[1.4rem] font-light lg:max-w-[40rem]">
                       {item.description}
                     </p>
                   </div>

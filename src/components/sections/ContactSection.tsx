@@ -1,8 +1,9 @@
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import SectionLabel from "../common/SectionLabel";
 import SectionTitle from "../common/SectionTitle";
 import { Button } from "../ui/button";
 import mapImg from "../../assets/images/map.png";
+import { NavLink } from "react-router-dom";
 
 const ContactSection = () => {
   return (
@@ -52,7 +53,7 @@ const ContactSection = () => {
               <p
                 data-aos="fade-up"
                 data-aos-delay="500"
-                className="flex items-center gap-[1rem] text-[1.8rem] leading-[2.7rem] font-normal text-[#425466]"
+                className="flex items-start gap-[1rem] text-[1.8rem] leading-[2.7rem] font-normal text-[#425466]"
               >
                 <MapPin className="min-w-[2.2rem] text-[#006BFF]" />{" "}
                 <span className="max-w-[40rem]">
@@ -64,8 +65,10 @@ const ContactSection = () => {
 
             <div data-aos="fade-up" data-aos-delay="600">
               <Button variant="dark">
-                <span>Contact Us</span>
-                <div className="relative inline-flex size-[3.3rem] items-center justify-center rounded-[.8rem] bg-white">
+                <NavLink to="/contact">
+                  <span>Contact Us</span>
+                </NavLink>
+                {/* <div className="relative inline-flex size-[3.3rem] items-center justify-center rounded-[.8rem] bg-white">
                   <div className="size-[1.7rem] overflow-hidden">
                     <div className="flex -translate-x-full transform transition-transform duration-300 group-hover:translate-x-0">
                       <div className="flex size-full items-center justify-center">
@@ -77,7 +80,7 @@ const ContactSection = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </Button>
             </div>
           </div>

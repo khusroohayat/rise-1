@@ -26,11 +26,11 @@ const WhyChooseSection = () => {
             >
               <div className="absolute top-0 left-0 h-[35px] w-[3px] bg-[#006BFF] transition-all duration-300 group-hover:h-[100%]" />
 
-              <h4 className="flex items-center gap-[1rem] text-[2rem] leading-[3rem] font-medium tracking-[0.1px]">
+              <h3 className="text-[1.8rem] leading-[2.4rem] font-normal tracking-[-0.36px]">
                 <span>{item.title}</span>
-              </h4>
+              </h3>
 
-              <p className="max-w-[70rem] text-[1.8rem] leading-[2.8rem] tracking-[0.2px] text-[#425466]">
+              <p className="max-w-[70rem] text-[1.4rem] font-light text-[#425466]">
                 {item.description}
               </p>
             </div>
