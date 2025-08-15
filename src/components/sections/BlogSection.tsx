@@ -42,7 +42,7 @@ const BlogSection = () => {
 
           <NavLink
             target="_blank"
-            to=""
+            to="/blog"
             className="flex flex-col gap-[2rem] overflow-hidden rounded-[.8rem]"
           >
             <img
@@ -64,7 +64,7 @@ const BlogSection = () => {
 
           <NavLink
             target="_blank"
-            to=""
+            to="/blog"
             className="flex flex-col gap-[2rem] overflow-hidden rounded-[.8rem]"
           >
             <img
