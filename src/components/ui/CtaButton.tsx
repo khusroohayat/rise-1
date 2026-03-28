@@ -16,7 +16,7 @@ const CtaButton: React.FC<CtaButtonProps> = ({
   return (
     <a
       href={href}
-      className={`group inline-flex justify-center rounded-[1.65rem] px-[1.6rem] pt-[.3rem] pb-[.6rem] text-[1.5rem] font-normal transition-all duration-200 hover:opacity-90 ${bgColor} ${textColor}`}
+      className={`group inline-flex justify-center rounded-[.8rem] px-[1.6rem] pt-[.3rem] pb-[.6rem] text-[1.5rem] font-normal transition-all duration-200 hover:opacity-90 ${bgColor} ${textColor}`}
     >
       <span>{text}</span>
 

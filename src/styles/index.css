@@ -1,0 +1,273 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@font-face {
+  font-family: "sohne-var";
+  src: url("../assets/fonts/sohne-variable.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* Colors */
+  --black-color: #0f0f0f;
+  --white-color: #ffffff;
+
+  /* Shadow */
+  --shadow-01: 0 1px 10px #0003;
+
+  /* Gradient */
+  --gradient-1: 45deg, rgba(42, 123, 155, 0.8) 100%;
+
+  /* Responsive Points */
+  --breakpoint-sm: 425px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-weight: 300;
+  font-family: "sohne-var", "Helvetica Neue", "Arial", sans-serif;
+  line-height: 2.4rem;
+  background-color: var(--white-color);
+  color: var(--black-color);
+}
+
+.container {
+  max-width: 108rem;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #0b3558;
+}
+
+/* Navbar Hover Underline */
+
+.hover-link {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.hover-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0; /* Adjust if you want some gap */
+  width: 100%;
+  height: 1.5px;
+  background: #006bff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.hover-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Marquee Sec */
+
+.marquee-sec .rfm-marquee-container {
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0) 12.5%,
+    rgb(0, 0, 0) 87.5%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  user-select: none;
+  overflow: hidden;
+}
+
+.marquee-sec .rfm-marquee-container::-webkit-scrollbar {
+  display: none;
+}
+
+.post-content {
+  max-width: 80rem;
+}
+
+.post-content h2 {
+  font-size: 4rem;
+  line-height: 4.8rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.post-content h3 {
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+  margin-top: 3.2rem;
+  margin-bottom: 1.6rem;
+}
+
+.post-content p {
+  font-size: 2rem;
+  line-height: 2.8rem;
+  margin-bottom: 2.4rem;
+}
+
+.post-content figure {
+  margin-bottom: 2rem;
+  margin-top: 3.2rem;
+}
+
+.post-content figcaption {
+  margin-top: 1.6rem;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #4f4f4f;
+}
+
+.post-content a {
+  color: #016bc1;
+}
+
+.post-content a:hover {
+  text-decoration: underline;
+}
+
+.post-content ul {
+  list-style: disc;
+  list-style-position: inside;
+  font-size: 2rem;
+  line-height: 2.8rem;
+}
+
+.post-content ol {
+  font-size: 2rem;
+  line-height: 2.8rem;
+}
+
+.post-content ol li,
+.post-content ul li {
+  margin-left: 2.1rem;
+  margin: 1rem 0rem;
+}
+
+.post-content table {
+  width: 100%;
+}
+
+.post-content table tbody {
+  text-align: center;
+}
+
+.post-content hr {
+  margin: 2rem 0rem;
+  border-color: rgb(233 226 218);
+}
+
+/* Progress Line  */
+
+.progress-wrapper {
+  position: relative;
+  height: 2px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation-name: fillProgress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+}
+
+@keyframes fillProgress {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* Swiper Custom Pagination */
+
+.custom-pagination .swiper-pagination-bullet {
+  background: #0b3558;
+  color: var(--white-color);
+  transition: 0.3s;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.8rem;
+}
+.custom-pagination .swiper-pagination-bullet-active {
+  background: #0b3558;
+  color: var(--white-color);
+}
+
+/* Page Hero Swiper Custom Pagination */
+
+.page-hero-custom-pagination .swiper-pagination-bullet {
+  background: #0b3558;
+  color: var(--white-color);
+  transition: 0.3s;
+  width: 1.4rem;
+  height: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+.page-hero-custom-pagination .swiper-pagination-bullet-active {
+  background: #0b3558;
+  color: var(--white-color);
+}
+
+/* Contact Section  */
+
+@keyframes pulseScale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Progress Line */
+
+@keyframes progressLine {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.progress-line {
+  animation: progressLine 5s linear forwards;
+}

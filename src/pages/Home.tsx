@@ -1,29 +1,34 @@
-import AboutSection from "../components/AboutSection/AboutSection";
-import BlogSection from "../components/BlogSection/BlogSection";
-import ContactSection from "../components/ContactSection/ContactSection";
-import EnterpriseSection from "../components/EnterpriseSection/EnterpriseSection";
-import GlobalSection from "../components/GlobalSection/GlobalSection";
-import HeroSection from "../components/HeroSection/HeroSection";
-import ModularSection from "../components/ModularSection/ModularSection";
-import ProductSection from "../components/ProductSection/ProductSection";
-import SolutionSection from "../components/SolutionSection/SolutionSection";
-import TrustedSection from "../components/TrustedSection/TrustedSection";
-import WhySection from "../components/WhySection/WhySection";
+import AboutSection from "@/components/sections/AboutSection";
+import BlogSection from "@/components/sections/BlogSection";
+import ContactSection from "@/components/sections/ContactSection";
+import ExperienceSection from "@/components/sections/ExperienceSection";
+import HeroSection from "@/components/sections/HeroSection";
+import ServiceSection from "@/components/sections/ServiceSection";
+import TeamSection from "@/components/sections/TeamSection";
+import TrustedSection from "@/components/sections/TrustedSection";
+import WhyChooseSection from "@/components/sections/WhyChooseSection";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   return (
-    <main>
+    <main className="overflow-hidden">
+      <Helmet>
+        <title>RISE Engineering</title>
+        <meta
+          name="description"
+          content="RadixTech's MEAL System simplifies monitoring and evaluation, delivering real-time insights to empower humanitarian aid organizations."
+        />
+      </Helmet>
+
       <HeroSection />
       <TrustedSection />
-      <ProductSection />
-      <SolutionSection />
-      <WhySection />
       <AboutSection />
+      <ExperienceSection />
+      <ServiceSection />
+      <WhyChooseSection />
+      <TeamSection />
       <BlogSection />
       <ContactSection />
-      <ModularSection />
-      <GlobalSection />
-      <EnterpriseSection />
     </main>
   );
 };
